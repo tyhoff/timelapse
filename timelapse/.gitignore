@@ -1,0 +1,7 @@
+errors/*
+static/camera/*
+databases/*
+sessions/*
+cache/*
+*.py[oc]
+uploads/*
