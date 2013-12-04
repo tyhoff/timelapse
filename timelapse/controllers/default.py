@@ -15,6 +15,15 @@ def pics():
     # pics = pics.reverse()
     return locals()
 
+def pages():
+    if len(request.args): page=int(request.args[0])
+    else: page=0
+
+    items_per_page=15
+    limitby=(page*items_per_page,(page+1)*items_per_page+1)
+    rows=db().select(db.image.ALL,limitby=limitby)
+    return dict(rows=rows,page=page,items_per_page=items_per_page)
+
 @request.restful()
 def api():
     response.view = 'generic.json'
