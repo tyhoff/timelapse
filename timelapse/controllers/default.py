@@ -35,16 +35,6 @@ def api():
         return db.image.validate_and_insert(**fields)
     return locals()
 
-def index():
-    """
-    example action using the internationalization operator T and flash
-    rendered by views/default/index.html or views/generic.html
-
-    if you need a simple wiki simply replace the two lines below with:
-    return auth.wiki()
-    """
-    return dict(message=T('Hello World'))
-
 
 def user():
     """
