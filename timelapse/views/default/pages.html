@@ -8,15 +8,18 @@
 		<a href="/timelapse/{{=row.image_path}}" class="thumbnail">
 			<img src="/timelapse/{{=row.image_path}}" alt="">
 		</a>
+		<center>{{=row.upload_date}}</center>
 	</li>
 	{{pass}}
 </ul>
 
 
-{{if page:}}
-<a href="{{=URL(args=[page-1])}}">previous</a>
-{{pass}}
+<ul class="pager">
+	{{if page:}}
+	<li class="previous"><a href="{{=URL(args=[page-1])}}">previous</a></li>
+	{{pass}}
 
-{{if len(rows)>items_per_page:}}
-<a href="{{=URL(args=[page+1])}}">next</a>
-{{pass}}
+	{{if len(rows)>items_per_page:}}
+	<li class="next"><a href="{{=URL(args=[page+1])}}">next</a></li>
+	{{pass}}
+</ul>
