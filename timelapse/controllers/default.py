@@ -15,7 +15,7 @@ def pics():
     # pics = pics.reverse()
     return locals()
 
-def pages():
+def index():
     if len(request.args): page=int(request.args[0])
     else: page=0
 
