@@ -1,3 +1,5 @@
 nohup.out
 web2py/
 .tempjpg/
+timelapse/static/camera/*
+timelapse/static/gifs/*
