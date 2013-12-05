@@ -1,4 +1,4 @@
-#Raspberrpy Pi Timelapse Camera
+#Raspberry Pi Timelapse Camera
 
 To download and install the application
 
