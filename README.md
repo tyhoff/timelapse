@@ -8,6 +8,11 @@ cd timelapse
 bash install.sh
 ```
 
+To make gif creation work you should set up a cron job to run `makegif.sh` every hour
+```bash
+59 * * * * <path_to_git_proejct>/makegif.sh
+```
+
 Start web2py server
 
 ```bash
@@ -17,8 +22,16 @@ python web2py/web2py.py --ip 0.0.0.0 -a <password>
 Start timelapse camera
 
 ```bash
-sudo python TimeLapse.py
+sudo python camera_timer.py
 ```
+
+To stop project, you must kill the processes. You can find the PID's by using the below commands
+
+```bash
+ps aux | grep web2py
+ps aux | grep camera_timer
+```
+
 
 
 How to access the web2py website
