@@ -10,19 +10,26 @@
 #########################################################################
 
 
-def pics():
-    pics = db().select(db.image.ALL, orderby=~db.image.upload_date)
-    # pics = pics.reverse()
-    return locals()
-
 def index():
     if len(request.args): page=int(request.args[0])
     else: page=0
 
     items_per_page=15
     limitby=(page*items_per_page,(page+1)*items_per_page+1)
-    rows=db().select(db.image.ALL,limitby=limitby)
+    rows=db(db.image.image_type == 'camera').select(limitby=limitby)
     return dict(rows=rows,page=page,items_per_page=items_per_page)
+
+
+def gifs():
+    if len(request.args): page=int(request.args[0])
+    else: page=0
+
+    items_per_page=15
+    limitby=(page*items_per_page,(page+1)*items_per_page+1)
+    rows=db(db.image.image_type == 'gif').select(limitby=limitby)
+    return dict(rows=rows,page=page,items_per_page=items_per_page)
+
+
 
 @request.restful()
 def api():

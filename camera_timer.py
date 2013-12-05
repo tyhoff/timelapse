@@ -8,14 +8,14 @@ import urllib2
 
 PI=1
 
-INTERVAL_NORMAL = 10 # seconds
+INTERVAL_NORMAL = 15 # seconds
 INTERVAL_MOTION = 10 # seconds
 
 # MODE_NORMAL = 1
 # MODE_MOTION = 2
 
 IMAGES_WEB2PY_PATH = 'static/camera/'
-WEB2PY_APP_PATH = 'web2py/applications/timelapse/'
+WEB2PY_APP_PATH = 'timelapse/'
 WEB2PY_URL = 'http://127.0.0.1:8000/timelapse/'
 
 timer_start     = time.time()
@@ -54,7 +54,7 @@ def takePicture():
     postPicArgs = [image_web2py_path]
     cmdArgs = [ 'raspistill', 
                 '--nopreview',
-                '--timeout', '500',
+                '--timeout', '0',
                 '--quality', '75',
                 '--height', '1024',
                 '--width', '768',
@@ -65,7 +65,7 @@ def takePicture():
 
 def postPic(image_path):
     url = WEB2PY_URL  + 'default/api/image.json'
-    values = {'image_path' : image_path}
+    values = {'image_path' : image_path, 'image_type' : 'camera'}
 
     print "IMAGE_PATH: " + image_path
 
@@ -82,12 +82,14 @@ while True:
     if GPIO.input(PIR_PIN):
         if (time.time() - timer_start) > INTERVAL_MOTION:
             takePicture()
+            #print "INTERVAL_MOTION"
             timer_start = time.time()
         else:
             pass
     else:
         if (time.time() - timer_start) > INTERVAL_NORMAL:
             takePicture()
+            #print "INTERVAL_NORMAL"
             timer_start = time.time()
         else:
             pass

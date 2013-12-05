@@ -83,6 +83,7 @@ use_janrain(auth, filename='private/janrain.key')
 db.define_table('image',
                 Field('name'),
                 Field('image_path', default = URL('static/camera/')),
+                Field('image_type', 'text'),
                 Field('upload_date', 'datetime', default = request.now))
 
 ## after defining tables, uncomment below to enable auditing

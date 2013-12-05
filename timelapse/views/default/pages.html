@@ -5,8 +5,8 @@
 	{{for i,row in enumerate(rows):}}
 	{{if i==items_per_page: break}}
 	<li class="span4">
-		<a href="/timelapse/{{=row.image_path}}" class="thumbnail">
-			<img src="/timelapse/{{=row.image_path}}" alt="">
+		<a href="{{=row.image_path}}" class="thumbnail">
+			<img src="{{=row.image_path}}" alt="">
 		</a>
 		<center>{{=row.upload_date}}</center>
 	</li>
