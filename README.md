@@ -17,16 +17,9 @@ To make gif creation work you should set up a cron job to run `makegif.sh` every
 59 * * * * <path_to_git_proejct>/makegif.sh
 ```
 
-Start web2py server
-
+Start services
 ```bash
-python web2py/web2py.py --ip 0.0.0.0 -a <password>
-```
-
-Start timelapse camera
-
-```bash
-sudo python camera_timer.py
+./run.sh
 ```
 
 To stop project, you must kill the processes. You can find the PID's by using the below commands
@@ -36,10 +29,8 @@ ps aux | grep web2py
 ps aux | grep camera_timer
 ```
 
-
-
 How to access the web2py website
 
 ```
-http://127.0.0.1:8000/timelapse
+http://<raspberry_pi_IP>:8000/timelapse
 ```
