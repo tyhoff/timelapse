@@ -24,7 +24,8 @@ response.google_analytics_id = None
 #########################################################################
 
 response.menu = [
-    (T('Home'), False, URL('default', 'index'), [])
+    (T('Individual Images'), False, URL('default', 'index')), 
+    (T('Gifs'), False, URL('default','gifs'))
 ]
 
 DEVELOPMENT_MENU = False

@@ -1,5 +1,6 @@
 {{extend 'layout.html'}}
 
+<h2>Camera Images</h2>
 
 <ul class="thumbnails">
 	{{for i,row in enumerate(rows):}}
@@ -7,9 +8,8 @@
 	<li class="span4">
 		<a href="/timelapse/{{=row.image_path}}" class="thumbnail">
 			<img src="/timelapse/{{=row.image_path}}" alt="">
-			{{print row.image_path}}
 		</a>
-		<center>{{=row.upload_date}}</center>
+		<center><font size="5">{{=row.upload_date}}</font></center>
 	</li>
 	{{pass}}
 </ul>

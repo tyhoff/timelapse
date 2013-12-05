@@ -16,7 +16,7 @@ def index():
 
     items_per_page=15
     limitby=(page*items_per_page,(page+1)*items_per_page+1)
-    rows=db(db.image.image_type == 'camera').select(limitby=limitby)
+    rows=db(db.image.image_type == 'camera').select(orderby=~db.image.upload_date, limitby=limitby)
     return dict(rows=rows,page=page,items_per_page=items_per_page)
 
 

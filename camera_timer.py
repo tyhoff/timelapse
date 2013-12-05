@@ -8,11 +8,8 @@ import urllib2
 
 PI=1
 
-INTERVAL_NORMAL = 15 # seconds
-INTERVAL_MOTION = 10 # seconds
-
-# MODE_NORMAL = 1
-# MODE_MOTION = 2
+INTERVAL_NORMAL = 300 # seconds
+INTERVAL_MOTION = 30 # seconds
 
 IMAGES_WEB2PY_PATH = 'static/camera/'
 WEB2PY_APP_PATH = 'timelapse/'
@@ -56,8 +53,8 @@ def takePicture():
                 '--nopreview',
                 '--timeout', '0',
                 '--quality', '75',
-                '--height', '1024',
-                '--width', '768',
+                '--width', '640',
+                '--height', '480',
                 '--output', image_unix_path ]
 
     popenAndCall(postPic, postPicArgs, cmdArgs)
@@ -93,33 +90,6 @@ while True:
             timer_start = time.time()
         else:
             pass
-
-    print 'TIME: %f' % (time.time() - timer_start)
-
-    time.sleep(1)
+    time.sleep(.01)
 
 
-# curl -d "name=Bob" http://127.0.0.1:8000/timelapse/default/api/person.json
-
-# b.define_table('image',
-#                 Field('image_path', default = URL('static/camera/')),
-#                 Field('upload_date', 'datetime', default = request.now))
-
-
-
-
-# import time
-# import RPi.GPIO as GPIO
-# # GPIO.setmode(GPIO.BCM)
-# GPIO.setmode(GPIO.BOARD)
-
-# pir_pin = 8
-
-# GPIO.setup(pir_pin, GPIO.IN)         # activate input
-
-# while True:
-#     if GPIO.input(pir_pin):
-#         print('PIR ALARM!')
-#     else:
-#         print('NOPE')
-#     time.sleep(1)
