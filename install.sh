@@ -4,5 +4,5 @@
 git clone https://github.com/web2py/web2py
 
 # move the timelapse application to the web2py/applications/
-ln -s timelapse web2py/applications/timelapse
+ln -s $PWD/timelapse $PWD/web2py/applications/timelapse
 
