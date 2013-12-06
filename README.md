@@ -5,6 +5,9 @@ To set up hardware
 1. Motion Sensor sensitivity and time are at extremes. Least amount of time and highest sensitivity. 
 2. Motion Sensor is connected to PIN 8.
 
+>NOTE: THIS PROJECT REQUIRES THAT YOU PLACE THE PROJECT AT THE ROOT OF YOUR HOME DIRECTORY
+> e.g. `~/timelapse`
+
 To download
 
 ```bash
