@@ -21,6 +21,12 @@ Start services
 ./run.sh
 ```
 
+How to access the web2py website
+
+```
+http://<raspberry_pi_IP>:8000/timelapse
+```
+
 To stop project, you must kill the processes. You can find the PID's by using the below commands
 
 ```bash
@@ -28,8 +34,4 @@ ps aux | grep web2py
 ps aux | grep camera_timer
 ```
 
-How to access the web2py website
 
-```
-http://<raspberry_pi_IP>:8000/timelapse
-```
