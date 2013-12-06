@@ -5,10 +5,15 @@ To set up hardware
 1. Motion Sensor sensitivity and time are at extremes. Least amount of time and highest sensitivity. 
 2. Motion Sensor is connected to PIN 8.
 
-To download and install the application
+To download
 
 ```bash
 git clone https://github.com/tyhoff/timelapse.git
+```
+
+Install dependencies
+```bash
+apt-get install imagemagick
 ```
 
 To make gif creation work you should set up a cron job to run `makegif.sh` every hour
