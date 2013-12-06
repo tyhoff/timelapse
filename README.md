@@ -9,7 +9,6 @@ To download and install the application
 
 ```bash
 git clone https://github.com/tyhoff/timelapse.git
-cd timelapse
 ```
 
 To make gif creation work you should set up a cron job to run `makegif.sh` every hour
